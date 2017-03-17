@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Blargboard install</title>
+<title>BlargBlog install</title>
 <style type="text/css">
 a:link { color: #0e5; }
 a:visited { color: #0e5; }
@@ -68,7 +68,7 @@ td:not([colspan='2'])
 </head>
 <body>
 <div id="container">
-<h1>Blargboard install</h1>
+<h1>BlargBlog install</h1>
 <br>
 <?php
 
@@ -95,12 +95,12 @@ $footer = '</div></body></html>';
 // pre-install checks
 
 if (file_exists('config/database.php'))
-	die('The board is already installed.'.$footer);
+	die('The Blog is already installed.'.$footer);
 	
 $footer = '<br><br><a href="javascript:window.history.back();">Go back and try again</a></div></body></html>';
 
 if (version_compare(PHP_VERSION, '5.3.0') < 0)
-	die('Error: Blargboard requires PHP 5.3 or above.'.$footer);
+	die('Error: BlargBlog requires PHP 5.3 or above.'.$footer);
 	
 if (!is_dir('config'))
 	if (!mkdir('config'))
@@ -114,7 +114,7 @@ if ($_POST['submit'])
 	$boardpassword = $_POST['boardpassword'];
 	
 	if (!$boardusername || !$boardpassword)
-		die('Please enter a board username and password.'.$footer);
+		die('Please enter a Blog username and password.'.$footer);
 		
 	if ($boardpassword !== $_POST['bpconfirm'])
 		die('Error: the passwords you entered don\'t match.'.$footer);
@@ -160,15 +160,15 @@ $logSqlErrors = 0;
 		1, $boardusername, $sha, $pss, 4, time(), $_SERVER['REMOTE_ADDR'], '', 2, 'blargboard');
 		
 ?>
-	<h3>Your new Blargboard board has been successfully installed!</h3>
+	<h3>Your new BlargBlog Blog has been successfully installed!</h3>
 	<br>
 	You should now:
 	<ul>
 		<li>delete install.php and database.sql
-		<li><a href="./?page=login">log in to your board</a> and configure it
+		<li><a href="./?page=login">log in to your Blog</a> and configure it
 	</ul>
 	<br>
-	Thank you for choosing Blargboard!<br>
+	Thank you for choosing BlargBlog!<br>
 	<br>
 <?php
 }
