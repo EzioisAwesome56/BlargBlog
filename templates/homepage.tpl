@@ -4,7 +4,7 @@
 				<table class="outline margin homepage">
 					<tr class="cell1">
 						<td style="padding:5px;">
-							{$homepage}
+							<center>{$homepage}</center>
 						</td>
 					</tr>
 				</table>
