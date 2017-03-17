@@ -189,10 +189,10 @@ else
 	<tr><td colspan=2>This setting can be useful when the board's database is shared with other applications. If you're not sure what to put in there, leave it blank.</td></tr>
 	<tr><td colspan=2>&nbsp;</td></tr>
 	
-	<tr><td>Board username:</td><td><input type="text" name="boardusername" size=64 maxlength=20 value=""></td></tr>
-	<tr><td>Board password:</td><td><input type="password" name="boardpassword" size=64 value=""></td></tr>
-	<tr><td>Confirm board password:</td><td><input type="password" name="bpconfirm" size=64 value=""></td></tr>
-	<tr><td colspan=2>An owner account with these credentials will be created on your board after the install process has completed.</td></tr>
+	<tr><td>Blog username:</td><td><input type="text" name="boardusername" size=64 maxlength=20 value=""></td></tr>
+	<tr><td>Blog password:</td><td><input type="password" name="boardpassword" size=64 value=""></td></tr>
+	<tr><td>Confirm Blog password:</td><td><input type="password" name="bpconfirm" size=64 value=""></td></tr>
+	<tr><td colspan=2>An owner account with these credentials will be created on your Blog after the install process has completed.</td></tr>
 	<tr><td colspan=2>&nbsp;</td></tr>
 	
 	<tr><td colspan=2><input type="submit" name="submit" value="Install"></td></tr>
