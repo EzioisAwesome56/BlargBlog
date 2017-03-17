@@ -143,13 +143,11 @@
 	<table id="footer" class="outline">
 	<tr>
 	<td class="cell2">
-		<table class="layout-table" style="line-height: 1.4em;">
+		<table class="layout-table">
 			<tr>
-			<td style="text-align: left;">
-				{$layout_credits}
+			<td>
+				{$layout_credits}<br>
 				<!-- {$perfdata} -->
-			</td>
-			<td style="text-align: right;">
 				{$mobileswitch}
 			</td>
 		</table>
