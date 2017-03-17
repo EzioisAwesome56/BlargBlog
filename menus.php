@@ -6,7 +6,7 @@ $headerlinks = array
 	actionLink('board') => 'Forums',
 );
 
-$sidelinks = array
+/*$sidelinks = array
 (
 	Settings::get('menuMainName') => array
 	(
@@ -19,6 +19,6 @@ $sidelinks = array
 		actionLink('lastposts') => 'Last posts',
 		actionLink('search') => 'Search',
 	),
-);
+);*/
 
 ?>

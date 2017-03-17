@@ -185,6 +185,8 @@ $perfdata = 'Page rendered in '.sprintf('%.03f',microtime(true)-$starttime).' se
 	<meta http-equiv="X-UA-Compatible" content="IE=10">
 	<meta name="description" content="<?php print $metaStuff['description']; ?>">
 	<meta name="keywords" content="<?php print $metaStuff['tags']; ?>">
+	<style>#main-sidebar {
+  display: none; }</style>
 	
 	<link rel="shortcut icon" type="image/x-icon" href="<?php print $favicon;?>">
 	<link rel="stylesheet" type="text/css" href="<?php print resourceLink("css/common.css");?>">
