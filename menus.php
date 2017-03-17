@@ -2,8 +2,8 @@
 
 $headerlinks = array
 (
-	actionLink('home') => 'Home', 
-	actionLink('board') => 'Forums',
+	actionLink('home') => 'Blog', 
+	actionLink('archive&id=1') => 'Archive',
 );
 
 /*$sidelinks = array

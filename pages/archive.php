@@ -3,18 +3,18 @@
 //  Access: all
 
 if(!isset($_GET['id']))
-	Kill(__("Forum ID unspecified."));
+	Kill(__("Archive load error (id not found)"));
 
 $fid = (int)$_GET['id'];
 
 if (!HasPermission('forum.viewforum', $fid))
-	Kill(__('You may not access this forum.'));
+	Kill(__('You may not view this archive'));
 
 $rFora = Query("select * from {forums} where id={0}", $fid);
 if(NumRows($rFora))
 	$forum = Fetch($rFora);
 else
-	Kill(__("Unknown forum ID."));
+	Kill(__("Error loading archive (unknown id)"));
 	
 if ($forum['redirect'])
 	die(header('Location: '.forumRedirectURL($forum['redirect'])));
@@ -50,17 +50,17 @@ $urlname = HasPermission('forum.viewforum', $fid, true) ? $title : '';
 
 $links = array();
 if($loguserid)
-	$links[] = actionLinkTag(__("Mark forum read"), "forum", $fid, "action=markasread", $urlname);
+	$links[] = actionLinkTag(__("Mark all blog posts read"), "forum", $fid, "action=markasread", $urlname);
 
 if($loguserid)
 {
 	if($isIgnored)
-		$links[] = actionLinkTag(__("Unignore forum"), "forum", $fid, "unignore", $urlname);
+		$links[] = actionLinkTag(__("Unignore archive"), "forum", $fid, "unignore", $urlname);
 	else
-		$links[] = actionLinkTag(__("Ignore forum"), "forum", $fid, "ignore", $urlname);
+		$links[] = actionLinkTag(__("Ignore archive"), "forum", $fid, "ignore", $urlname);
 
 	if (HasPermission('forum.postthreads', $fid))
-		$links[] = actionLinkTag(__("Post thread"), "newthread", $fid, '', $urlname);
+		$links[] = actionLinkTag(__("Make a new blog entry"), "newthread", $fid, '', $urlname);
 }
 
 $metaStuff['description'] = htmlspecialchars(strip_tags($forum['description']));
@@ -107,7 +107,7 @@ if(NumRows($rThreads))
 } 
 else
 	if(!HasPermission('forum.postthreads', $fid))
-		Alert(__("You cannot start any threads here."), __("Empty forum"));
+		Alert(__("You cannot start any blog posts"), __("No archived blog posts"));
 	elseif($loguserid)
 		Alert(format(__("Would you like to {0}?"), actionLinkTag(__("post something"), "newthread", $fid)), __("Empty forum"));
 	else
