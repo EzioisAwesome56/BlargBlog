@@ -7,13 +7,13 @@
 						{if $post.links.delete}<li>{$post.links.delete}{/if}
 					</ul>
 				</span>
-				<span style='font-size:125%;'>
+				<center><span style='font-size:125%;'>
 					{$post.title}
-				</span>
+				</span></center>
 				<br>
-				<span style="font-weight:normal;font-size:97%;">
+				<center><span style="font-weight:normal;font-size:97%;">
 					Posted on {$post.formattedDate} by {$post.userlink}
-				</span>
+				</span></center>
 			</th>
 		</tr>
 		<tr class="cell0">
