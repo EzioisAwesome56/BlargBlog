@@ -159,9 +159,9 @@ if(!file_exists($themefile))
 	
 
 $layout_credits = 
-'<img src="'.resourceLink('img/poweredbyblarg.png').'" style="margin-right: 3px;">
-<a href="http://blargboard.kuribo64.net/" target="_blank">Blargboard '.BLARG_VERSION.'</a> &middot; by StapleButter<br>
-Based off <a href="http://abxd.dirbaio.net/" target="_blank">ABXD</a> by Dirbaio, Kawa &amp; co.<br>';
+'<!-- <img src="'.resourceLink('img/poweredbyblarg.png').'" style="margin-right: 3px;"><br> -->
+<a href="http://blargboard.kuribo64.net/" target="_blank">BlargBlog '.BLARG_VERSION.'</a> &middot; by EzioisAwesome56<br>
+Based off Blargboard 1.2 by StapleButter';
 	
 
 $layout_contents = "<div id=\"page_contents\">$layout_contents</div>";
