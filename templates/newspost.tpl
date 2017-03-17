@@ -18,12 +18,12 @@
 		</tr>
 		<tr class="cell0">
 			<td style="padding:10px;">
-				{$post.text}
+				<center>{$post.text}</center>
 			</td>
 		</tr>
 		<tr class="cell1">
 			<td>
-				{$post.comments}. {$post.replylink}
+				<center>{$post.comments}. {$post.replylink}</center>
 			</td>
 		</tr>
 	</table>
