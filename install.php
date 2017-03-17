@@ -21,7 +21,7 @@ body
 
 #container
 {
-	background: #032;
+	background: #053787;
 	min-height: 100%;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
