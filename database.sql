@@ -1,5 +1,5 @@
 /* 
-	Blargboard default data set
+	Blargblog default data set
 	
 	* sample category/forum accessible to everyone
 	* usergroups and their permissions

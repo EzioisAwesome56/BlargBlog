@@ -7,19 +7,9 @@
 				<table class="layout-table">
 				<tr>
 				<td>
-					<a href="{actionLink page='home'}"><img id="theme_banner" src="{$layout_logopic}" alt="{$boardname}" title="{$boardname}"></a>
+					<center><a href="{actionLink page='home'}"><img id="theme_banner" src="{$layout_logopic}" alt="{$boardname}" title="{$boardname}"></a></center>
 				</td>
 				<td>
-					<table class="outline" id="headerInfo">
-						<tr class="header1"><th>{$poratitle}</th></tr>
-						<tr>
-							<td class="cell1 center">
-								{$layout_time} &mdash; {$layout_views}
-								{if $layout_birthdays}<br><br>{$layout_birthdays}{/if}
-								{if $poratext}<br><br>{$poratext}{/if}
-							</td>
-						</tr>
-					</table>
 				</td>
 				</tr>
 				</table>
