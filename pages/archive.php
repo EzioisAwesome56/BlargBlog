@@ -1,6 +1,5 @@
 <?php
-//  AcmlmBoard XD - Thread listing page
-//  Access: all
+// BlargBlog archive page
 
 if(!isset($_GET['id']))
 	Kill(__("Archive load error (id not found)"));
@@ -26,7 +25,7 @@ if($loguserid)
 		Query("REPLACE INTO {threadsread} (id,thread,date) SELECT {0}, {threads}.id, {1} FROM {threads} WHERE {threads}.forum={2}",
 			$loguserid, time(), $fid);
 
-		die(header("Location: ".actionLink("board", $forum['board'])));
+		die(header("Location: ".actionLink("home", $forum['home'])));
 	}
 	
 	$isIgnored = FetchResult("select count(*) from {ignoredforums} where uid={0} and fid={1}", $loguserid, $fid) == 1;
@@ -67,7 +66,7 @@ $metaStuff['description'] = htmlspecialchars(strip_tags($forum['description']));
 $metaStuff['tags'] = getKeywords(strip_tags($forum['title']));
 
 $OnlineUsersFid = $fid;
-MakeCrumbs(forumCrumbs($forum), $links);
+MakeCrumbs(array(actionLink("archive&id=1") => __('Archive')));
 
 makeAnncBar();
 

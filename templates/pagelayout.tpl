@@ -17,7 +17,7 @@
 		</tr>
 		<tr class="header1">
 			<th id="navBar">
-				<div style="display:inline-block; float:right;">
+				<div style="text-align: center;">
 					{if $loguserid}
 					{if HasPermission('admin.viewadminpanel')}
 					<span class="navButton">
@@ -102,10 +102,10 @@
 		<table class="outline breadcrumbs"><tr class="header1">
 			<th>
 				{if $layout_actionlinks && count($layout_actionlinks)}
-				<div class="actionlinks" style="float:right;">
+				<div class="actionlinks">
 					<ul class="pipemenu smallFonts">
 					{foreach $layout_actionlinks as $alink}
-						<li>{$alink}
+						<li><center>{$alink}</center>
 					{/foreach}
 					</ul>
 				</div>
