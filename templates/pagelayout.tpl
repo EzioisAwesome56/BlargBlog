@@ -80,22 +80,6 @@
 </tr>
 
 <tr>
-<td id="main-sidebar">
-	<table id="sidebar" class="outline">
-		<tr>
-			<td class="cell1">
-				<table class="outline margin">
-					{foreach $sidelinks as $cat=>$links}
-					<tr class="header0"><th>{$cat}</th></tr>
-						{foreach $links as $url=>$text}
-							<tr class="cell{cycle values='2,1'}"><td><a href="{$url|escape}">{$text}</a></td></tr>
-						{/foreach}
-					{/foreach}
-				</table>
-			</td>
-		</tr>
-	</table>
-</td>
 
 {capture "breadcrumbs"}
 {if $layout_crumbs || $layout_actionlinks}
