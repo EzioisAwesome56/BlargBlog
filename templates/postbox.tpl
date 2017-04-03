@@ -61,7 +61,22 @@
 		</tr>
 		<tr>
 		<td class="side userlink">
-		test
+		<center><ul class="pipemenu">
+				{if $post.type == $smarty.const.POST_NORMAL}
+					<li><a href="{actionLink page='post' id=$post.id}">Link</a>
+					{if $post.links.quote}<li>{$post.links.quote}{/if}
+					{if $post.links.edit}<li>{$post.links.edit}{/if}
+					{if $post.links.delete}<li>{$post.links.delete}{/if}
+					{if $post.links.report}<li>{$post.links.report}{/if}
+					{foreach $post.links.extra as $link}
+						<li>{$link}
+					{/foreach}
+				{else if $post.type == $smarty.const.POST_DELETED_SNOOP}
+					<li>Post deleted
+					{if $post.links.undelete}<li>{$post.links.undelete}{/if}
+					{if $post.links.close}<li>{$post.links.close}{/if}
+				{/if}
+				</ul></center>
 		</td>
 		</tr>
 	</table>
