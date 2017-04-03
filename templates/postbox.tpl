@@ -1,9 +1,9 @@
 	<table class="{if $post.fulllayout}custompost table{$post.u_id}{else}post{/if} margin" id="post{$post.id}">
 		<tr>
-			<td class="side userlink{if $post.fulllayout} topbar{$post.u_id}_1{/if}">
-				{$post.userlink}
+			<td class="side userlink{if $post.fulllayout} topbar{$post.u_id}_1{/if}" style="text-align: center;">
+				Posted by {$post.userlink} at {$post.formattedDate}
 			</td>
-			<td class="meta right{if $post.fulllayout} topbar{$post.u_id}_2{/if}">
+			<!--<td class="meta right{if $post.fulllayout} topbar{$post.u_id}_2{/if}">
 				<div style="float: left;" id="meta_{$post.id}">
 				{if $post.type == $smarty.const.POST_SAMPLE}
 					Preview
@@ -34,10 +34,10 @@
 					{if $post.id}<li>#{$post.id}{/if}
 					{if $post.ip}<li>{$post.ip}{/if}
 				</ul>
-			</td>
+			</td>-->
 		</tr>
 		<tr>
-			<td class="side{if $post.fulllayout} sidebar{$post.u_id}{/if}">
+			<!--<td class="side{if $post.fulllayout} sidebar{$post.u_id}{/if}">
 				<div class="smallFonts">
 					{if $post.sidebar.rank}{$post.sidebar.rank}<br>{/if}
 					{$post.sidebar.title}<br>
@@ -54,8 +54,8 @@
 					Last view: {$post.sidebar.lastview}<br>
 					{$post.sidebar.isonline}
 				</div>
-			</td>
-			<td class="post{if $post.fulllayout} mainbar{$post.u_id}{else if $post.haslayout} haslayout{/if}" id="post_{$post.id}">
+			</td>-->
+			<td class="post{if $post.fulllayout} mainbar{$post.u_id}{else if $post.haslayout} haslayout{/if}" id="post_{$post.id}" style="width: 100%;">
 				{$post.contents}
 			</td>
 		</tr>
