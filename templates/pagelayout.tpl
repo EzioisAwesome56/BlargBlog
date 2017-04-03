@@ -89,7 +89,7 @@
 				<div class="actionlinks">
 					<ul class="pipemenu smallFonts">
 					{foreach $layout_actionlinks as $alink}
-						<li><center>{$alink}</center>
+						<li>{$alink}
 					{/foreach}
 					</ul>
 				</div>
