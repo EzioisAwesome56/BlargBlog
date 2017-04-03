@@ -62,7 +62,7 @@
 					</span>
 					{/if}
 				</div>
-				<div id="navMenuContainer">
+				<div id="navMenuContainer" style="text-align: center;">
 					{foreach $headerlinks as $url=>$text}
 						<span class="navButton"><a href="{$url|escape}">{$text}</a></span>
 					{/foreach}
