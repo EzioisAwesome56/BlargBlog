@@ -112,8 +112,8 @@ function forumCrumbs($forum)
 	global $forumBoards;
 	//$ret = array(actionLink('archive') => __('Archive'));
 	
-	if ($forum['board'] != '')
-		$ret[actionLink('board', $forum['board'])] = $forumBoards[$forum['board']];
+	if ($forum['archive'] != '')
+		$ret[actionLink('archive', $forum['archive'])] = $forumBoards[$forum['archive']];
 	
 	if (!$forum['id']) return $ret;
 	
@@ -121,11 +121,11 @@ function forumCrumbs($forum)
 	while ($p = Fetch($parents))
 	{
 		$public = HasPermission('forum.viewforum', $p['id'], true);
-		$ret[actionLink('forum', $p['id'], '', $public?$p['title']:'')] = $p['title'];
+		$ret[actionLink('archive', $p['id'], '', $public?$p['title']:'')] = $p['title'];
 	}
 	
 	$public = HasPermission('forum.viewforum', $forum['id'], true);
-	$ret[actionLink('forum', $forum['id'], '', $public?$forum['title']:'')] = $forum['title'];
+	$ret[actionLink('archive', $forum['id'], '', $public?$forum['title']:'')] = $forum['title'];
 	return $ret;
 }
 
