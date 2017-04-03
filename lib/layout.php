@@ -110,7 +110,7 @@ function makeForumList($fieldname, $selectedID, $allowNone=false)
 function forumCrumbs($forum)
 {
 	global $forumBoards;
-	$ret = array(actionLink('board') => __('Forums'));
+	//$ret = array(actionLink('archive') => __('Archive'));
 	
 	if ($forum['board'] != '')
 		$ret[actionLink('board', $forum['board'])] = $forumBoards[$forum['board']];
