@@ -81,7 +81,7 @@ table.outline > tbody > tr > td:last-child
 table.outline > tbody:first-child > tr:first-child > *:first-child,
 table.post td.userlink
 {
-	border-top-left-radius: 9px;
+	border-top-left-radius: 0px;
 }
 table.outline > tbody:first-child > tr:first-child > *:last-child,
 table.post td.meta
@@ -98,7 +98,7 @@ table.outline > tbody:last-child > tr:last-child > *:last-child,
 table.post td.post,
 table.deletedpost td.meta
 {
-	border-bottom-right-radius: 9px;
+	border-bottom-right-radius: 0px;
 }
 
 tr.header0 > th,
