@@ -86,7 +86,7 @@
 		<table class="outline breadcrumbs"><tr class="header1">
 			<th>
 				{if $layout_actionlinks && count($layout_actionlinks)}
-				<div class="actionlinks">
+				<div class="actionlinks" style="text-align: center;">
 					<ul class="pipemenu smallFonts">
 					{foreach $layout_actionlinks as $alink}
 						<li>{$alink}
