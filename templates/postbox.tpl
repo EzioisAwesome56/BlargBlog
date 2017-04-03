@@ -59,4 +59,9 @@
 				{$post.contents}
 			</td>
 		</tr>
+		<tr>
+		<td class="side userlink">
+		test
+		</td>
+		</tr>
 	</table>
