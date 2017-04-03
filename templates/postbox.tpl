@@ -5,7 +5,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td class="post{if $post.fulllayout} mainbar{$post.u_id}{else if $post.haslayout} haslayout{/if}" id="post_{$post.id}" style="width: 100%;">
+			<td class="post{if $post.fulllayout} mainbar{$post.u_id}{else if $post.haslayout} haslayout{/if}" id="post_{$post.id}" style="width: 100%; text-align: center;">
 				{$post.contents}
 			</td>
 		</tr>
