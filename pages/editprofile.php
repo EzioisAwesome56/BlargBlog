@@ -41,12 +41,6 @@ $title = __('Edit profile');
 
 makeCrumbs(array(actionLink("profile", $userid, "", $user['name']) => htmlspecialchars($uname), '' => __("Edit profile")));
 
-loadRanksets();
-$ranksets = $ranksetNames;
-$ranksets = array_reverse($ranksets);
-$ranksets[''] = __("None");
-$ranksets = array_reverse($ranksets);
-
 foreach($dateformats as $format)
 	$datelist[$format] = ($format ? $format.' ('.cdate($format).')':'');
 foreach($timeformats as $format)
@@ -74,35 +68,16 @@ AddCategory('general', 'appearance', __('Appearance'));
 
 if ($editUserMode || HasPermission('user.editdisplayname'))
 	AddField('general', 'appearance', 'displayname', __('Display name'), 'text', array('width'=>24, 'length'=>20, 'hint'=>__('Leave this empty to use your login name.'), 'callback'=>'HandleDisplayname'));
-	
-AddField('general', 'appearance', 'rankset', __('Rankset'), 'select', array('options'=>$ranksets));
 
 if ($editUserMode || (HasPermission('user.edittitle') && (HasPermission('user.havetitle') || $user['posts'] >= Settings::get('customTitleThreshold'))))
 	AddField('general', 'appearance', 'title', __('Title'), 'text', array('width'=>80, 'length'=>255));
 
 
-if ($editUserMode || HasPermission('user.editavatars'))
-{
-	AddCategory('general', 'avatar', __('Avatar'));
-
-	AddField('general', 'avatar', 'picture', __('Avatar'), 'displaypic', array('hint'=>__('Maximum size is 200x200 pixels.')));
-	AddField('general', 'avatar', 'minipic', __('Minipic'), 'minipic', array('hint'=>__('Maximum size is 16x16 pixels.')));
-}
-
-
 AddCategory('general', 'presentation', __('Presentation'));
 
-AddField('general', 'presentation', 'threadsperpage', __('Threads per page'), 'number', array('min'=>1, 'max'=>99));
-AddField('general', 'presentation', 'postsperpage', __('Posts per page'), 'number', array('min'=>1, 'max'=>99));
 AddField('general', 'presentation', 'dateformat', __('Date format'), 'datetime', array('presets'=>$datelist, 'presetname'=>'presetdate'));
 AddField('general', 'presentation', 'timeformat', __('Time format'), 'datetime', array('presets'=>$timelist, 'presetname'=>'presettime'));
 AddField('general', 'presentation', 'fontsize', __('Font scale'), 'number', array('min'=>20, 'max'=>200));
-
-
-AddCategory('general', 'options', __('Options'));
-
-$blockall = $pltype ? __('Hide post layouts') : __('Hide signatures');
-AddField('general', 'options', 'blocklayouts', $blockall, 'checkbox');
 
 
 // EDITPROFILE TAB -- PERSONAL ------------------------------------------------
@@ -112,19 +87,11 @@ AddCategory('personal', 'personal', __('Personal information'));
 
 AddField('personal', 'personal', 'sex', __('Gender'), 'radiogroup', array('options'=>$sexes));
 AddField('personal', 'personal', 'realname', __('Real name'), 'text', array('width'=>24, 'length'=>60));
-AddField('personal', 'personal', 'location', __('Location'), 'text', array('width'=>24, 'length'=>60));
-AddField('personal', 'personal', 'birthday', __('Birthday'), 'birthday');
 
 if ($editUserMode || HasPermission('user.editbio'))
 	AddField('personal', 'personal', 'bio', __('Bio'), 'textarea');
 	
 AddField('personal', 'personal', 'timezone', __('Timezone offset'), 'timezone');
-
-
-AddCategory('personal', 'contact', __('Contact information'));
-
-AddField('personal', 'contact', 'homepageurl', __('Homepage URL'), 'text', array('width'=>60, 'length'=>60));
-AddField('personal', 'contact', 'homepagename', __('Homepage name'), 'text', array('width'=>60, 'length'=>60));
 
 
 // EDITPROFILE TAB -- ACCOUNT -------------------------------------------------
@@ -165,30 +132,8 @@ if ($editUserMode)
 	if ($isbanned && $user['tempbantime'])
 		AddField('account', 'admin', 'dopermaban', __('Make ban permanent'), 'checkbox', array('callback'=>'dummycallback'));
 	
-	AddField('account', 'admin', 'globalblock', __('Globally block layout'), 'checkbox');
-	
 	$aflags = array(0x1=>__('IP banned'), 0x2=>__('Errorbanned'));
 	AddField('account', 'admin', 'flags', __('Misc. settings'), 'bitmask', array('options'=>$aflags));
-}
-
-
-// EDITPROFILE TAB -- LAYOUT --------------------------------------------------
-if ($editUserMode || HasPermission('user.editpostlayout'))
-{
-	$pltext = $pltype ? __('Post layout') : __('Signature');
-	AddPage('layout', $pltext);
-	
-	AddCategory('layout', 'postlayout', $pltext);
-	
-	if ($pltype) 
-		AddField('layout', 'postlayout', 'postheader', __('Post header'), 'textarea', array('rows'=>16));
-	AddField('layout', 'postlayout', 'signature', __('Signature'), 'textarea', array('rows'=>16));
-	
-	AddField('layout', 'postlayout', 'signsep', __('Show signature separator'), 'checkbox', array('negative'=>true));
-	
-	// TODO make a per-user permission for this one?
-	if ($pltype == 2) 
-		AddField('layout', 'postlayout', 'fulllayout', __('Apply layout to whole post box'), 'checkbox');
 }
 
 
@@ -796,7 +741,6 @@ foreach ($epFields as $catid => $cfields)
 				$checks = array();
 				$checks[$item['value']] = " selected=\"selected\"";
 				$options = "";
-				foreach($item['options'] as $key => $val)
 					$options .= format("<option value=\"{0}\"{1}>{2}</option>", $key, $checks[$key], $val);
 				$output .= format("<select id=\"{0}\" name=\"{0}\" size=\"1\" {2}>\n{1}\n</select>\n", $field, $options, $disabled);
 				break;
