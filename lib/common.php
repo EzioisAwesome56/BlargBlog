@@ -92,7 +92,6 @@ if (Settings::get('maintenance') && !$loguser['root'] && (!isset($_GET['page']) 
 
 include(__DIR__."/notifications.php");
 include(__DIR__."/firewall.php");
-include(__DIR__."/ranksets.php");
 include(__DIR__."/bbcode_parser.php");
 include(__DIR__."/bbcode_text.php");
 include(__DIR__."/bbcode_callbacks.php");
