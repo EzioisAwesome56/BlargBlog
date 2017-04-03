@@ -11,7 +11,7 @@ if(!is_file('config/database.php'))
 	die(header('Location: install.php'));
 
 	
-define('BLARG_VERSION', '0.1');
+define('BLARG_VERSION', 'alpha 0.1');
 
 $boardroot = preg_replace('{/[^/]*$}', '/', $_SERVER['SCRIPT_NAME']);
 define('BOARD_ROOT', $boardroot);
