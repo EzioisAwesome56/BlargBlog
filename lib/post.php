@@ -94,7 +94,6 @@ function makePostText($post, $poster)
 		"postcount" => $poster['posts'],
 		"numdays" => floor((time()-$poster['regdate'])/86400),
 		"date" => formatdate($post['date']),
-		"rank" => GetRank($poster['rankset'], $poster['posts']),
 	);
 	$bucket = "amperTags"; include(__DIR__."/pluginloader.php");
 
@@ -304,7 +303,7 @@ function makePost($post, $type, $params=array())
 	// quit abusing custom syndromes you unoriginal fuckers
 	$poster['title'] = preg_replace('@Affected by \'?.*?Syndrome\'?@si', '', $poster['title']);
 
-	$sidebar['rank'] = GetRank($poster['rankset'], $poster['posts']);
+	$sidebar['rank'] = ($poster['posts']);
 
 	if($poster['title'])
 		$sidebar['title'] = strip_tags(CleanUpPost($poster['title'], '', true), '<b><strong><i><em><span><s><del><img><a><br/><br><small>');
